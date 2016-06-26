@@ -1,2 +1,1 @@
-# docker-drush
-IF Fulcrum Docker Drush
+# IF Fulcrum Docker Drush
