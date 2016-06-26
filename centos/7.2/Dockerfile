@@ -2,7 +2,8 @@ FROM fulcrum/php
 MAINTAINER IF Fulcrum "fulcrum@ifsight.net"
 
 # Enable EPEL Repos, update, install PHP 5.6, install composer & drush
-RUN yum --noplugins install -y git which mysql                             && \
+RUN rpm --rebuilddb                                                        && \
+    yum --noplugins install -y git which mysql                             && \
     yum --noplugins upgrade -y                                             && \
     package-cleanup --dupes                                                && \
     package-cleanup --cleandupes                                           && \
