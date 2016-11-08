@@ -5,6 +5,7 @@ RUN apk --update add curl git php5-phar php5-openssl                       && \
     cd /usr/local                                                          && \
     curl -sS https://getcomposer.org/installer | php                       && \
     /bin/mv composer.phar bin/composer                                     && \
+    deluser php                                                            && \
     adduser -h /tmp/phphome -s /bin/sh -D -H -u 1971 php                   && \
     mkdir -p /usr/share/drush/commands/ /tmp/phphome drush7 drush8         && \
     chown php.php /tmp/phphome drush7 drush8                               && \
