@@ -1,7 +1,7 @@
 FROM fulcrum/php:latest-alpine
 MAINTAINER IF Fulcrum "fulcrum@ifsight.net"
 
-RUN apk --update add curl git php5-phar php5-openssl                       && \
+RUN apk --update add curl git mysql-client php5-phar php5-openssl          && \
     cd /usr/local                                                          && \
     curl -sS https://getcomposer.org/installer | php                       && \
     /bin/mv composer.phar bin/composer                                     && \
