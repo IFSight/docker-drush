@@ -14,7 +14,7 @@ RUN apk --update add curl git mysql-client php5-phar php5-openssl          && \
     ln -s /usr/local/drush8/vendor/drush/drush/drush /usr/local/bin/drush  && \
     ln -s /usr/local/drush7/vendor/drush/drush/drush /usr/local/bin/drush7 && \
     ln -s /usr/local/drush8/vendor/drush/drush/drush /usr/local/bin/drush8 && \
-    su - php -c "/usr/local/bin/drush7 @none dl registry_rebuild-7.x"      && \
+    su - php -c "/usr/local/bin/drush8 @none dl registry_rebuild-7.x"      && \
     mv /tmp/phphome/.drush/registry_rebuild /usr/share/drush/commands/     && \
     deluser php                                                            && \
     adduser -h /var/www/html -s /bin/sh -D -H -u 1971 php
