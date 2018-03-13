@@ -1,6 +1,8 @@
 FROM fulcrum/php
 MAINTAINER IF Fulcrum "fulcrum@ifsight.net"
 
+ENV COLUMNS=256
+
 # Enable EPEL Repos, update, install PHP 5.6, install composer & drush
 RUN rpm --rebuilddb                                                        && \
     yum --noplugins install -y git which mysql                             && \
@@ -23,8 +25,6 @@ RUN rpm --rebuilddb                                                        && \
     su - php -c "/usr/local/bin/drush @none dl registry_rebuild"           && \
     mv /tmp/phphome/.drush/registry_rebuild /usr/share/drush/commands/     && \
     usermod -d /var/www/html php
-
-ENV COLUMNS=256
 
 USER php
 
