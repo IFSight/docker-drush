@@ -24,6 +24,8 @@ RUN rpm --rebuilddb                                                        && \
     mv /tmp/phphome/.drush/registry_rebuild /usr/share/drush/commands/     && \
     usermod -d /var/www/html php
 
+ENV COLUMNS=256
+
 USER php
 
 # Move to the directory were the php files stands
